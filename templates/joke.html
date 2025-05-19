@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke Generator</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/styles.css')}}"
+    />
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <a href="/"><button>Home</button> </a>
+      <a href="/joke"> <button>Mood Based Jokes</button></a>
+      <a href="/search"><button>Search For A Joke</button></a>
+    </div>
+    <div class="joke-body">
+      <h2 class="title">Get a Joke</h2>
+
+      <div class="form-container">
+        <form action="/joke" method="POST" class="joke-form">
+          <div class="form-group">
+            <label for="mood" class="form-label">Select your mood</label>
+            <select name="mood" id="mood" class="form-select" required>
+              {% for mood in moods %}
+              <option value="{{mood}}">{{mood}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <button type="submit" class="submit-btn" id="submit1">
+            Give me a joke
+          </button>
+        </form>
+      </div>
+
+      <!-- Mood Message -->
+      {% if mood_message %}
+      <div class="message mood-message">
+        <p>{{mood_message}}</p>
+      </div>
+      {% endif %}
+
+      <!-- Error -->
+      {% if error %}
+      <div class="message error-message">
+        <p>{{error}}</p>
+      </div>
+      {% endif %}
+
+      <!-- Show Joke -->
+      {% if joke %}
+      <div class="joke-container">
+        <h3 class="joke-title">Here's Your Joke!</h3>
+        <p class="joke-text">{{joke}}</p>
+      </div>
+      {% endif %}
+
+      <div class="joke-home-btn-container">
+        <a href="/"><button id="home">Back to Home</button></a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke Machine-Home</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/styles.css')}}"
+    />
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <a href="/"><button>Home</button> </a>
+      <a href="/joke"> <button>Mood Based Jokes</button></a>
+      <a href="/search"><button>Search For A Joke</button></a>
+    </div>
+
+    <div class="content">
+      <h1>Welcome to The Joke Machine</h1>
+      <h2>Get A Joke \/</h2>
+      <div class="joke-links">
+        <p><a href="/joke">Mood Based Jokes</a></p>
+        <p><a href="/search">Search for a Joke</a></p>
+      </div>
+    </div>
+  </body>
+</html>

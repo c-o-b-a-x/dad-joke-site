@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search for a joke term</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/styles.css')}}"
+    />
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <a href="/"><button>Home</button> </a>
+      <a href="/joke"> <button>Mood Based Jokes</button></a>
+      <a href="/search"><button>Search For A Joke</button></a>
+    </div>
+
+    <div class="search-container">
+      <h2 class="title">Get a Joke</h2>
+
+      <div class="form-container">
+        <form action="/search" method="POST" class="joke-form">
+          <div class="form-group">
+            <label for="search" class="form-label">search for a topic</label>
+            <input type="text" name="search" id="search">
+          <button type="submit" class="submit-btn" id="submit2">Give me the jokes</button>
+        </form>
+      </div>
+
+      {% if error %}
+      <p>{{ error }}</p>
+      {% endif %} 
+      
+
+      
+      {% if jokes %}
+        <table id="table">
+          <tbody>
+            {% for i in range(0, jokes|length, 3) %}
+            <tr>
+              {% for joke in jokes[i:i+3] %}
+              <td>{{ joke.joke }}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+      <a href="/"><button id="home">Back to Home</button></a>
+  </body>
+</html>
