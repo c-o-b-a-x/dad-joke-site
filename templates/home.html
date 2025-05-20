@@ -22,6 +22,40 @@
       <div class="joke-links">
         <p><a href="/joke">Mood Based Jokes</a></p>
         <p><a href="/search">Search for a Joke</a></p>
+
+        <div class="content-grid">
+          <div class="content-box">
+            <img
+              src="{{ url_for('static', filename='assets/image1.png') }}"
+              alt="Image 1"
+            />
+            <div>
+              <p>
+                Last night me and my girlfriend watched three DVDs back to back.
+                Luckily I was the one facing the TV.
+              </p>
+              <a href="/joke">Click Here For More</a>
+            </div>
+          </div>
+
+          <div class="content-box">
+            <img
+              src="{{ url_for('static', filename='assets/image2.png') }}"
+              alt="Image 2"
+            />
+            <p>How can you tell a vampire has a cold? They start coffin.</p>
+            <a href="/joke">Click Here For More</a>
+          </div>
+
+          <div class="content-box">
+            <img
+              src="{{ url_for('static', filename='assets/image3.png') }}"
+              alt="Image 3"
+            />
+            <p>What's the difference between a seal and a sea lion? An ion!</p>
+            <a href="/joke">Click Here For More</a>
+          </div>
+        </div>
       </div>
     </div>
   </body>

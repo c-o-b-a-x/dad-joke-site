@@ -19,34 +19,41 @@
     <div class="search-container">
       <h2 class="title">Get a Joke</h2>
 
-      <div class="form-container">
+      <div class="form-search-container">
         <form action="/search" method="POST" class="joke-form">
           <div class="form-group">
-            <label for="search" class="form-label">search for a topic</label>
-            <input type="text" name="search" id="search">
-          <button type="submit" class="submit-btn" id="submit2">Give me the jokes</button>
-        </form>
-      </div>
+            <p>search for a keyword</p>
+            <input type="text" name="search" id="search" />
+            <button type="submit" class="submit-btn" id="submit2">
+              Give me the jokes
+            </button>
+          </div>
 
-      {% if error %}
-      <p>{{ error }}</p>
-      {% endif %} 
-      
-
-      
-      {% if jokes %}
-        <table id="table">
-          <tbody>
-            {% for i in range(0, jokes|length, 3) %}
-            <tr>
-              {% for joke in jokes[i:i+3] %}
-              <td>{{ joke.joke }}</td>
+          {% if error %}
+          <p>{{error}}</p>
+          {% endif %} {% if jokes %}
+          <style>
+            .search-container {
+              background: none;
+              border: none;
+              box-shadow: none;
+            }
+          </style>
+          <table id="table">
+            <tbody>
+              {% for i in range(0, jokes|length, 5) %}
+              <tr>
+                {% for joke in jokes[i:i+5] %}
+                <td>{{ joke.joke }}</td>
+                {% endfor %}
+              </tr>
               {% endfor %}
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      {% endif %}
-      <a href="/"><button id="home">Back to Home</button></a>
+            </tbody>
+          </table>
+          {% endif %}
+        </form>
+        <a href="/"><button id="home">Back to Home</button></a>
+      </div>
+    </div>
   </body>
 </html>

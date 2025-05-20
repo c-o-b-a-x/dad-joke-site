@@ -58,6 +58,8 @@ def search_joke():
                 response = requests.get(api_url, headers=headers)
                 if response.status_code == 200:
                         jokes = response.json().get("results")
+                else:
+                     error="Couldnt get your joke, either try again with a different term or try again later "
         return render_template("search.html",jokes=jokes,error=error,joke=joke)
 
 
