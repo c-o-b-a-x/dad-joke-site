@@ -208,3 +208,36 @@ a button {
 .form-search-container p {
   margin-bottom: 0;
 }
+
+#keyword {
+  padding-left: 40px;
+}
+
+#search {
+  padding-left: 46px;
+}
+
+@media screen and (max-width: 1024px) {
+  .joke-container {
+    max-width: 400px;
+    max-height: 200px;
+  }
+  #table {
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 100px;
+  }
+
+  button {
+    cursor: pointer;
+  }
+  .sidebar {
+    position: fixed;
+  }
+  .search-home {
+    margin-left: 25vw;
+  }
+}
+button {
+  cursor: pointer;
+}

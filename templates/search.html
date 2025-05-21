@@ -22,7 +22,7 @@
       <div class="form-search-container">
         <form action="/search" method="POST" class="joke-form">
           <div class="form-group">
-            <p>search for a keyword</p>
+            <p id="keyword">search for a keyword</p>
             <input type="text" name="search" id="search" />
             <button type="submit" class="submit-btn" id="submit2">
               Give me the jokes
@@ -52,7 +52,9 @@
           </table>
           {% endif %}
         </form>
-        <a href="/"><button id="home">Back to Home</button></a>
+        <a href="/"
+          ><button id="home" class="search-home">Back to Home</button></a
+        >
       </div>
     </div>
   </body>
